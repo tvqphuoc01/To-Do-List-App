@@ -1,0 +1,21 @@
+doctype html
+head
+  title Todo App
+  link(rel='stylesheet', href='style.css')
+  link(href='https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap', rel='stylesheet')
+  link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+.todo-container
+  h2 To-Do List
+  .todo
+    form.todo-header(action='/', method='POST')
+      input(type='text', name='content')
+      a
+        button(type='submit')
+          span.fas.fa-plus
+    ul.todo-list
+      li.todo-list-item
+          .todo-list-item-name Texxt
+          a.edit(href='')
+            span.fas.fa-edit
+          a.remove(href='')
+            span.fas.fa-times
