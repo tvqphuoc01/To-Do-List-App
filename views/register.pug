@@ -1,0 +1,16 @@
+link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
+link(rel='stylesheet', href='register.css')
+link(rel='stylesheet', href='css/all.css')
+script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+.wrapper.fadeInDown
+  #formContent
+    // Tabs Titles
+    // Icon
+    .fadeIn.first
+      i.far.fa-user-circle.fa-7x
+    // Login Form
+    form
+      input#login.fadeIn.second(type='text', name='email', placeholder='email')
+      input#password.fadeIn.third(type='text', name='login', placeholder='password')
+      input.fadeIn.fourth(type='submit', value='Sign Up')

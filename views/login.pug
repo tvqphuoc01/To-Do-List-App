@@ -1,5 +1,6 @@
 link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
 link(rel='stylesheet', href='login.css')
+link(rel='stylesheet', href='css/all.css')
 script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
 script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
 .wrapper.fadeInDown
@@ -7,7 +8,7 @@ script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
     // Tabs Titles
     // Icon
     .fadeIn.first
-      img#icon(src='http://danielzawadzki.com/codepen/01/icon.svg', alt='User Icon')
+      i.far.fa-user-circle.fa-7x
     // Login Form
     form
       input#login.fadeIn.second(type='text', name='login', placeholder='login')
@@ -15,4 +16,5 @@ script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
       input.fadeIn.fourth(type='submit', value='Log In')
     // Remind Passowrd
     #formFooter
-      a.underlineHover(href='#') Forgot Password?
+      a.underlineHover(href='/register') Sign Up
+      

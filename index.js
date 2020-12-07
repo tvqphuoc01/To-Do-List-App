@@ -19,11 +19,16 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(express.static('public/stylesheets'));
 app.use(express.static('public/img'));
+app.use(express.static('public/fontawesome'));
 
 app.use('/', userController);
 
 app.get('/login', function(req, res) {
   res.render('login');
+});
+
+app.get('/register', function(req, res) {
+  res.render('register');
 });
 
 app.listen(port, () => {
