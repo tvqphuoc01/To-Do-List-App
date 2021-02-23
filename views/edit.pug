@@ -1,0 +1,81 @@
+doctype html
+head
+  title Todo App
+  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+  link(rel='stylesheet', href='edit.css')
+  link(href='https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap', rel='stylesheet')
+  link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+.container-fluid
+  .row
+    .col-6.page-todo.bootstrap.snippets.bootdeys
+        .tasks
+          .task-list
+            h1 Tasks
+            if highPriority
+              each task in highPriority
+                .priority.high
+                  span high priority
+                .task.high.task-modify
+                  .desc
+                    .title= task.title
+                    div= task.description
+                  .time
+                    .date= task.time
+                  container.button-group
+                    a(href="#")
+                      button.btn.btn-success
+                        i.fas.fa-edit
+                    a(href="#")
+                      button.btn.btn-danger
+                        i.fas.fa-trash-alt
+            if mediumPriority
+              each task in mediumPriority
+                .priority.medium
+                  span medium priority
+                .task.medium.task-modify
+                  .desc
+                    .title= task.title
+                    div= task.description
+                  .time
+                    .date= task.time
+                  container.button-group
+                    a(href="#")
+                      button.btn.btn-success
+                        i.fas.fa-edit
+                    a(href="#")
+                      button.btn.btn-danger
+                        i.fas.fa-trash-alt
+            if lowPriority
+              each task in lowPriority
+                .priority.low
+                  span low priority
+                .task.low.task-modify
+                  .desc
+                    .title= task.title
+                    div= task.description
+                  .time
+                    .date= task.time
+                  container.button-group
+                    a(href="#")
+                      button.btn.btn-success
+                        i.fas.fa-edit
+                    a(href="#")
+                      button.btn.btn-danger
+                        i.fas.fa-trash-alt
+            .clearfix
+    .col-6
+      .wrapper.fadeInDown
+        #formContent
+          .fadeIn.first
+            i.far.fa-list-alt.fa-7x
+          form(action='/add', method='POST')
+            select.login.second(name="select")
+              option(value='', disabled='', selected='') SELECT YOUR PRIORITY
+              option(name='opt1', value='1') High Priority
+              option(value='2') Medium Priority
+              option(value='3') Low Priority
+            input#login.fadeIn.second(type='text', name='title', placeholder='TITLE')
+            input#login.fadeIn.third(type='text', name='description', placeholder='DESCRIPTION')
+            input#login.fadeIn.third(type='text', name='time', placeholder='DATE')
+            input.fadeIn.fourth(type='submit', value='ADD')

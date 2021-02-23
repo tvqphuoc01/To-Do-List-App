@@ -3,10 +3,10 @@ const express = require('express');
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
-const controller = require('../controller/user.controller.js');
+const controller = require('../controller/add.controller');
 
 const authMiddleware = require('../middleware/login.middleware');
 
-router.get('/', authMiddleware.authMiddleware, controller.userGet);
+router.post('/', authMiddleware.authMiddleware, controller.add);
 
 module.exports = router;
