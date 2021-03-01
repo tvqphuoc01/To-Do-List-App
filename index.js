@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 const app = express();
 const port = 3000;
@@ -14,6 +15,7 @@ const registerController = require('./route/register.router');
 const loginController = require('./route/login.router');
 const editController = require('./route/edit.router');
 const addController = require('./route/add.router');
+const logoutController = require('./route/logout.router');
 
 
 app.set('views', './views');
@@ -28,6 +30,12 @@ app.use(express.static('public/stylesheets'));
 app.use(express.static('public/img'));
 app.use(express.static('public/fontawesome'));
 
+app.use(session({
+  secret: 'mySecretKey',
+  resave: true,
+  saveUninitialized: false,
+}));
+
 app.use('/', userController);
 
 app.use('/login', loginController);
@@ -37,6 +45,8 @@ app.use('/register', registerController);
 app.use('/edit', editController);
 
 app.use('/add', addController);
+
+app.use('/logout', logoutController);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
